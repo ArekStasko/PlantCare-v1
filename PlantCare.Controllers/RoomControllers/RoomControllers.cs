@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PlantCare.Controllers.RoomControllers
+﻿
+namespace PlantCare.Controllers
 {
-    internal class RoomControllers
+    public class RoomControllers : IRoomControllers
     {
+
     }
 }
