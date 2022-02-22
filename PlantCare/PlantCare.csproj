@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PlantCare.Controllers\PlantCare.Controllers.csproj" />
+  </ItemGroup>
+
 </Project>
