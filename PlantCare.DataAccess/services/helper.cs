@@ -1,31 +1,16 @@
-﻿using System;
-using System.Data.SqlClient;
-
-
+﻿
 namespace PlantCare.DataAccess.services
 {
     public static class Helper
     {
-        public static void ConnectToDB()
+        public static string GetConnString()
         {
             string dataSource = @"DESKTOP-7M8BP42";
             string db = "PlantCare";
 
-            string connString = @"Data Source =" + dataSource + ";Initial Catalog ="
-                + db + ";Persist Security Info=True";
+            string connString = $"Data Source ={dataSource};Initial Catalog={db};Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; 
+            return connString;
 
-            SqlConnection conn = new SqlConnection(connString);
-
-            try
-            {
-                Console.WriteLine("Opening Connection...");
-                conn.Open();
-                Console.WriteLine("Connection open");
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine($"Whoops we have an error : {e}");
-            }
         }
     }
 }
