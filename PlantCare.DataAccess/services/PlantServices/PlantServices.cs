@@ -1,10 +1,13 @@
 ﻿using System.Data.SqlClient;
+using System.Data;
+using PlantCare.DataAccess.models;
+using Dapper;
 
 namespace PlantCare.DataAccess.services
 {
     public class PlantServices : IPlantServices
     {
-        private SqlConnection _conn;
+        private SqlConnection? _conn;
         private void OpenConnection()
         {
             string connectionString = Helper.GetConnString();
@@ -12,24 +15,21 @@ namespace PlantCare.DataAccess.services
 
             try
             {
-                Console.WriteLine("Opening Connection...");
                 _conn.Open();
-                Console.WriteLine("Connection open");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine($"Whoops we have an error : {e}");
+                return;
             }
         }
 
-        public void TestConnection()
+        public List<Plant> GetPlants()
         {
             OpenConnection();
-        }
-
-        public void GetPlants()
-        {
-
+            using (IDbConnection connection = _conn)
+            {
+                return connection.Query<Plant>("dbo.spGetPlants").ToList();
+            }
         }
     }
 }

@@ -7,16 +7,22 @@ namespace PlantCare
         static void Main(string[] args)
         {
             var view = new View();
-            view.TestConnection();
         }
     }
 
     public class View
     {
-        public void TestConnection()
+
+        public void DisplayMessage(string msg)
         {
-            IPlantControllers plantControllers = ControllersFactory.GetPlantControlers();
-            plantControllers.TestServiceConnection();
+            Console.WriteLine($"{msg}");
+        }
+
+        public void DisplayErrorMessage(string msg)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{msg}");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
