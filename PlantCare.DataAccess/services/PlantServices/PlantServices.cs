@@ -7,12 +7,9 @@ namespace PlantCare.DataAccess.services
 {
     public class PlantServices : IPlantServices
     {
-        private SqlConnection? _conn;
+        private SqlConnection _conn = new SqlConnection(Helper.GetConnString());
         private void OpenConnection()
         {
-            string connectionString = Helper.GetConnString();
-            _conn = new SqlConnection(connectionString);
-
             try
             {
                 _conn.Open();

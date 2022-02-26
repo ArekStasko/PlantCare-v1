@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCare", "PlantCare\PlantCare.csproj", "{EBFD5760-1079-4393-B87B-1AEC557EA5DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantCare", "PlantCare\PlantCare.csproj", "{EBFD5760-1079-4393-B87B-1AEC557EA5DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCare.Controllers", "PlantCare.Controllers\PlantCare.Controllers.csproj", "{E1208FC8-45E6-4C09-9FD5-35C7486E34AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantCare.Controllers", "PlantCare.Controllers\PlantCare.Controllers.csproj", "{E1208FC8-45E6-4C09-9FD5-35C7486E34AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCare.DataAccess", "PlantCare.DataAccess\PlantCare.DataAccess.csproj", "{11B35603-8FA3-4C53-AD5C-2A5770D79056}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantCare.DataAccess", "PlantCare.DataAccess\PlantCare.DataAccess.csproj", "{11B35603-8FA3-4C53-AD5C-2A5770D79056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCare.DataAccess.Tests", "PlantCare.DataAccess.Tests\PlantCare.DataAccess.Tests.csproj", "{CC67A384-4FB3-467D-B99D-E0344473EF40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{11B35603-8FA3-4C53-AD5C-2A5770D79056}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B35603-8FA3-4C53-AD5C-2A5770D79056}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11B35603-8FA3-4C53-AD5C-2A5770D79056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC67A384-4FB3-467D-B99D-E0344473EF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC67A384-4FB3-467D-B99D-E0344473EF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC67A384-4FB3-467D-B99D-E0344473EF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC67A384-4FB3-467D-B99D-E0344473EF40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
