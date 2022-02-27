@@ -14,9 +14,12 @@ namespace PlantCare.DataAccess.Tests
         {
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
             var rooms = roomServices.GetRooms();
-            foreach(var room in rooms)
+            if(rooms.Count > 0)
             {
-                roomServices.DeleteRoom(room);
+                foreach (var room in rooms)
+                {
+                    roomServices.DeleteRoom(room);
+                }
             }
         }
 
@@ -25,8 +28,8 @@ namespace PlantCare.DataAccess.Tests
         {
             var roomToInsert = new Room()
             {
-                Name = "Test Room",
-                Location = "First floor",
+                RoomName = "Test Room",
+                RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
                 LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
@@ -35,11 +38,11 @@ namespace PlantCare.DataAccess.Tests
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
             roomServices.InsertRoom(roomToInsert);
 
-            var roomToDelete = roomServices.GetRooms().Single(room => room.Name == roomToInsert.Name);
+            var roomToDelete = roomServices.GetRooms().Single(room => room.RoomName == roomToInsert.RoomName); 
             roomServices.DeleteRoom(roomToDelete);
             
             var rooms = roomServices.GetRooms();
-            rooms.Should().NotContain(room => room.Name == roomToDelete.Name);
+            rooms.Should().NotContain(room => room.RoomName == roomToDelete.RoomName);
         }
 
         [Test]
@@ -47,8 +50,8 @@ namespace PlantCare.DataAccess.Tests
         {
             var roomToInsert = new Room()
             {
-                Name = "Test Room",
-                Location = "First floor",
+                RoomName = "Test Room",
+                RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
                 LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
@@ -58,7 +61,7 @@ namespace PlantCare.DataAccess.Tests
             roomServices.InsertRoom(roomToInsert);
 
             var rooms = roomServices.GetRooms();
-            rooms.Should().ContainSingle(room => room.Name == roomToInsert.Name);
+            rooms.Should().NotBeEmpty();
         }
     }
 }

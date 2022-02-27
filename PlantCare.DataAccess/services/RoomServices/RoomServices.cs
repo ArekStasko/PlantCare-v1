@@ -7,9 +7,12 @@ namespace PlantCare.DataAccess.services
 {
     public class RoomServices : IRoomServices
     {
-        private SqlConnection _conn = new SqlConnection(Helper.GetConnString());
+        private SqlConnection? _conn;
         private void OpenConnection()
         {
+            string connectionString = Helper.GetConnString();
+            _conn = new SqlConnection(connectionString);
+
             try
             {
                 _conn.Open();
@@ -32,28 +35,28 @@ namespace PlantCare.DataAccess.services
         public void InsertRoom(Room room)
         {
             OpenConnection();
-            var values = new
-            {
-                RoomName = room.Name,
-                RoomLocation = room.Location,
-                PlantsCount = room.PlantsCount,
-                RoomInsolation = room.RoomInsolation,
-                LastVisit = room.LastVisit
-            };
             using(IDbConnection connection = _conn)
             {
-
-                connection.Query("dbo.spInsertRoom", values);
+                connection.Execute("dbo.spInsertRoom",
+                    new
+                    {
+                        RoomName = room.RoomName,
+                        RoomLocation = room.RoomLocation,
+                        PlantsCount = room.PlantsCount,
+                        RoomInsolation = room.RoomInsolation,
+                        LastVisit = room.LastVisit
+                    },
+                    commandType: CommandType.StoredProcedure
+                    );
             }
         }
 
         public void DeleteRoom(Room room)
         {
             OpenConnection();
-            var values = new { RoomID = room.Id };
             using(IDbConnection connection = _conn)
             {
-                connection.Query("dbo.spDeleteRoom", values);
+                connection.Query("dbo.spDeleteRoom", new { RoomID = room.Id }, commandType: CommandType.StoredProcedure);
             }
         }
 
