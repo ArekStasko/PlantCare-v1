@@ -28,7 +28,7 @@ namespace PlantCare.DataAccess.services
             OpenConnection();
             using(IDbConnection connection = _conn)
             {
-                return connection.Query<Room>("dbo.spGetRoom").First();
+                return connection.Query<Room>("dbo.spGetRoom", new { RoomID = roomID }, commandType: CommandType.StoredProcedure).First();
             }
         }
 
@@ -77,6 +77,7 @@ namespace PlantCare.DataAccess.services
                 connection.Execute("dbo.spUpdateRoom",
                      new
                      {
+                         RoomID = room.Id,
                          RoomName = room.RoomName,
                          RoomLocation = room.RoomLocation,
                          PlantsCount = room.PlantsCount,
@@ -84,7 +85,7 @@ namespace PlantCare.DataAccess.services
                          LastVisit = room.LastVisit
                      },
                     commandType: CommandType.StoredProcedure
-                    );
+                    ); 
             }
         }
 
