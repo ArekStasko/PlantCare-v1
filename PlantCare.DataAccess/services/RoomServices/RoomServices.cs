@@ -23,6 +23,15 @@ namespace PlantCare.DataAccess.services
             }
         }
 
+        public Room GetRoom(Guid roomID)
+        {
+            OpenConnection();
+            using(IDbConnection connection = _conn)
+            {
+                return connection.Query<Room>("dbo.spGetRoom").First();
+            }
+        }
+
         public List<Room> GetRooms()
         {
             OpenConnection();
@@ -57,6 +66,25 @@ namespace PlantCare.DataAccess.services
             using(IDbConnection connection = _conn)
             {
                 connection.Query("dbo.spDeleteRoom", new { RoomID = room.Id }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void UpdateRoom(Room room)
+        {
+            OpenConnection();
+            using(IDbConnection connection = _conn)
+            {
+                connection.Execute("dbo.spUpdateRoom",
+                     new
+                     {
+                         RoomName = room.RoomName,
+                         RoomLocation = room.RoomLocation,
+                         PlantsCount = room.PlantsCount,
+                         RoomInsolation = room.RoomInsolation,
+                         LastVisit = room.LastVisit
+                     },
+                    commandType: CommandType.StoredProcedure
+                    );
             }
         }
 
