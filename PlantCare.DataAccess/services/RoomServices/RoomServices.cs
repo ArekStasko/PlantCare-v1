@@ -60,12 +60,12 @@ namespace PlantCare.DataAccess.services
             }
         }
 
-        public void DeleteRoom(Room room)
+        public void DeleteRoom(Guid Id)
         {
             OpenConnection();
             using(IDbConnection connection = _conn)
             {
-                connection.Query("dbo.spDeleteRoom", new { RoomID = room.Id }, commandType: CommandType.StoredProcedure);
+                connection.Query("dbo.spDeleteRoom", new { RoomID = Id }, commandType: CommandType.StoredProcedure);
             }
         }
 

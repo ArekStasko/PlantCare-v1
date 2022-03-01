@@ -18,7 +18,7 @@ namespace PlantCare.DataAccess.Tests
             {
                 foreach (var room in rooms)
                 {
-                    roomServices.DeleteRoom(room);
+                    roomServices.DeleteRoom(room.Id);
                 }
             }
         }
@@ -39,7 +39,7 @@ namespace PlantCare.DataAccess.Tests
             roomServices.InsertRoom(roomToInsert);
 
             var roomToDelete = roomServices.GetRooms().Single(room => room.RoomName == roomToInsert.RoomName); 
-            roomServices.DeleteRoom(roomToDelete);
+            roomServices.DeleteRoom(roomToDelete.Id);
             
             var rooms = roomServices.GetRooms();
             rooms.Should().NotContain(room => room.RoomName == roomToDelete.RoomName);

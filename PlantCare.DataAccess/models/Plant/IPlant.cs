@@ -4,8 +4,9 @@ namespace PlantCare.DataAccess.models
     public interface IPlant
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public Guid RoomID { get; set; }
+        public string PlantName { get; set; }
+        public string PlantDescription { get; set; }
         public string HydrationNeeded { get; set; }
         public int HowManyDaysToHydration { get; set; }
         public bool IsSunNeeded { get; set; }
