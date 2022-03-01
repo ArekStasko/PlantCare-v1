@@ -7,9 +7,12 @@ namespace PlantCare.DataAccess.services
 {
     public class PlantServices : IPlantServices
     {
-        private SqlConnection _conn = new SqlConnection(Helper.GetConnString());
+        private SqlConnection _conn;
         private void OpenConnection()
         {
+            string connectionString = Helper.GetConnString();
+            _conn = new SqlConnection(connectionString);
+
             try
             {
                 _conn.Open();
@@ -34,7 +37,12 @@ namespace PlantCare.DataAccess.services
             OpenConnection();
             using(IDbConnection connection = _conn)
             {
-                return connection.Query<Plant>("dbo.spGetPlant").First();
+                return connection.Query<Plant>("dbo.spGetPlant", 
+                    new
+                    {
+                        PlantID = Id
+                    },
+                    commandType: CommandType.StoredProcedure).First();
             }
         }
 
@@ -62,7 +70,7 @@ namespace PlantCare.DataAccess.services
             OpenConnection();
             using(IDbConnection connection = _conn)
             {
-                connection.Execute("dbo.UpdatePlant", new
+                connection.Execute("dbo.spUpdatePlant", new
                 {
                     PlantID = plant.Id,
                     RoomID = plant.RoomID,
@@ -82,7 +90,7 @@ namespace PlantCare.DataAccess.services
             OpenConnection();
             using(IDbConnection connection = _conn)
             {
-                connection.Execute("dbo.DeletePlant", new
+                connection.Execute("dbo.spDeletePlant", new
                 {
                     PlantID = Id,
                 }, 
