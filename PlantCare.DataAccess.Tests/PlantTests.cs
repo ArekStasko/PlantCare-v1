@@ -108,6 +108,42 @@ namespace PlantCare.DataAccess.Tests
         }
 
         [Test]
+        public void GetRoomPlants_ShouldReturn_RoomPlants()
+        {
+            var roomToInsert = new Room()
+            {
+                RoomName = "Test Room",
+                RoomLocation = "First floor",
+                PlantsCount = 12,
+                RoomInsolation = 56,
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+            };
+
+            var roomServices = DataAccessFactory.GetRoomServicesInstance();
+            roomServices.InsertRoom(roomToInsert);
+
+            var room = roomServices.GetRooms().First();
+
+            var plantServices = DataAccessFactory.GetPlantServicesInstance();
+
+            var plant = new Plant()
+            {
+                RoomID = room.Id,
+                PlantName = "Test name",
+                PlantDescription = "Test Description",
+                HydrationNeeded = "A little",
+                HowManyDaysToHydration = 2,
+                IsSunNeeded = false,
+                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22)
+            };
+
+            plantServices.InsertPlant(plant);
+            var roomPlants = plantServices.GetRoomPlants(room.Id);
+            roomPlants.Should().Contain(plt => plt.RoomID == room.Id);
+        }
+
+
+        [Test]
         public void InsertPlant_ShouldInsert_OnePlant()
         {
             var roomToInsert = new Room()

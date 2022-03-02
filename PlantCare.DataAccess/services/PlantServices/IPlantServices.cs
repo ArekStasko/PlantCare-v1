@@ -9,5 +9,6 @@ namespace PlantCare.DataAccess.services
         public void InsertPlant(Plant plant);
         public void DeletePlant(Guid Id);
         public void UpdatePlant(Plant plant);
+        public List<Plant> GetRoomPlants(Guid RoomID);
     }
 }
