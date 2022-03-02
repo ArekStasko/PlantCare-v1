@@ -10,7 +10,7 @@ namespace PlantCare.DataAccess.models
         public int RoomInsolation { get; set; }
         public DateTime LastVisit { get; set; }
 
-        public string[] ConvertToDataRow => new string[]
+        public string[] ConvertToDataRow() => new string[]
         {
             RoomName,
             RoomLocation,
