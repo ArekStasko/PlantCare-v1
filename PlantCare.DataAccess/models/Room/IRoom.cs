@@ -10,5 +10,7 @@ namespace PlantCare.DataAccess.models
         public int PlantsCount { get; set; }
         public int RoomInsolation { get; set; }
         public DateTime LastVisit { get; set; }
+
+        public string[] ConvertToDataRow();
     }
 }

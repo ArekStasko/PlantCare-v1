@@ -98,5 +98,14 @@ namespace PlantCare.DataAccess.services
             }
         }
 
+        public List<Plant> GetRoomPlants(Guid RoomID)
+        {
+            OpenConnection();
+            using(IDbConnection connection = _conn)
+            {
+                return connection.Query<Plant>("spGetRoomPlants", new { RoomID = RoomID }, commandType: CommandType.StoredProcedure).ToList();
+            }
+        }
+
     }
 }

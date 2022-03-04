@@ -12,7 +12,16 @@ namespace PlantCare.DataAccess.Tests
         [SetUp]
         public void Setup()
         {
+            var plantServices = DataAccessFactory.GetPlantServicesInstance();
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
+
+
+            var plants = plantServices.GetPlants();
+            foreach (var plant in plants)
+            {
+                plantServices.DeletePlant(plant.Id);
+            }
+
             var rooms = roomServices.GetRooms();
             if(rooms.Count > 0)
             {
