@@ -4,14 +4,14 @@ namespace PlantCare.Controllers
 {
     public static class ControllersFactory
     {
-        public static IPlantControllers GetPlantControlers()
+        public static IPlantControllers GetPlantControlers(this IView view)
         {
-            return new PlantControllers();
+            return new PlantControllers(view);
         }
 
-        public static IRoomControllers GetRoomControllers()
+        public static IRoomControllers GetRoomControllers(this IView view)
         {
-            return new RoomControllers();
+            return new RoomControllers(view);
         }
     }
 }
