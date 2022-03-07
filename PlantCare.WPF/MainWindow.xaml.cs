@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PlantCare.Controllers;
+using PlantCare.DataAccess.models;
 
 namespace PlantCare.WPF
 {
@@ -21,10 +22,26 @@ namespace PlantCare.WPF
     /// </summary>
     public partial class MainWindow : Window, IView
     {
+        private IRoomControllers _roomControllers;
+        private List<Room> _rooms;
+        public List<Room> Rooms 
+        { 
+            get => _rooms; 
+            set => _rooms = value; 
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            _roomControllers = ControllersFactory.GetRoomControllers(this);
         }
+
+        internal void LoadElements()
+        {
+            Rooms = _roomControllers.GetRooms();
+            icRooms.ItemsSource = Rooms;
+        }
+        private void icRooms_Loaded(object sender, RoutedEventArgs e) => LoadElements();
 
         public void DisplayMessage(string msg)
         {

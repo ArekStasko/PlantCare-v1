@@ -13,7 +13,7 @@
         <Grid.RowDefinitions>
             
         </Grid.RowDefinitions>
-        <ItemsControl>
+        <ItemsControl HorizontalAlignment="Center" VerticalAlignment="Top" Loaded="icRooms_Loaded" Name="icRooms">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -24,7 +24,9 @@
                             <Grid.RowDefinitions>
                                 
                             </Grid.RowDefinitions>
-                            
+                            <TextBlock Text="{Binding RoomName}" />
+                            <TextBlock Text="{Binding RoomLocation}" />
+                            <TextBlock Text="{Binding PlantsCount}" />
                         </Grid>
                     </WrapPanel>
                 </DataTemplate>

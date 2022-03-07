@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PlantCare.Controllers\PlantCare.Controllers.csproj" />
+    <ProjectReference Include="..\PlantCare.DataAccess\PlantCare.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
