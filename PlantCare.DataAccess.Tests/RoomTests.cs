@@ -41,7 +41,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -63,7 +64,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -82,7 +84,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -109,7 +112,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();

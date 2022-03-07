@@ -11,6 +11,7 @@ namespace PlantCare.DataAccess.models
         public int HowManyDaysToHydration { get; set; }
         public bool IsSunNeeded { get; set; }
         public DateTime LastHydration { get; set; }
+        public string ImageSource { get; set; }
 
         public string[] ConvertToDataRow();
     }

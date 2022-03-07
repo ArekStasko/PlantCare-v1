@@ -60,6 +60,7 @@ namespace PlantCare.DataAccess.services
                     HowManyDaysToHydration = plant.HowManyDaysToHydration,
                     IsSunNeeded = plant.IsSunNeeded,
                     LastHydration = plant.LastHydration,
+                    ImageSource = plant.ImageSource,
                 }, 
                 commandType: CommandType.StoredProcedure);
             }
@@ -80,6 +81,7 @@ namespace PlantCare.DataAccess.services
                     HowManyDaysToHydration = plant.HowManyDaysToHydration,
                     IsSunNeeded = plant.IsSunNeeded,
                     LastHydration = plant.LastHydration,
+                    ImageSource = plant.ImageSource,
                 },
                 commandType: CommandType.StoredProcedure);
             }
