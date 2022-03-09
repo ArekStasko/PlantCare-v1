@@ -9,6 +9,7 @@ namespace PlantCare.DataAccess.models
         public int PlantsCount { get; set; }
         public int RoomInsolation { get; set; }
         public DateTime LastVisit { get; set; }
+        public string ImageSource { get; set; } 
 
         public string[] ConvertToDataRow() => new string[]
         {
@@ -17,6 +18,7 @@ namespace PlantCare.DataAccess.models
             PlantsCount.ToString(),
             RoomInsolation.ToString(),
             LastVisit.ToString("MM/dd/yyyy HH:mm"),
+            ImageSource
         };
     }
 }

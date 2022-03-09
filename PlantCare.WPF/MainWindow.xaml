@@ -1,0 +1,36 @@
+﻿<Window x:Class="PlantCare.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlantCare.WPF"
+        mc:Ignorable="d"
+        Title="PlantCare" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            
+        </Grid.RowDefinitions>
+        <ItemsControl HorizontalAlignment="Center" VerticalAlignment="Top" Loaded="icRooms_Loaded" Name="icRooms">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding RoomName}" />
+                            <TextBlock Text="{Binding RoomLocation}" />
+                            <TextBlock Text="{Binding PlantsCount}" />
+                        </Grid>
+                    </WrapPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>

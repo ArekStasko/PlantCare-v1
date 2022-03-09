@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantCare.Controllers", "Pl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantCare.DataAccess", "PlantCare.DataAccess\PlantCare.DataAccess.csproj", "{11B35603-8FA3-4C53-AD5C-2A5770D79056}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCare.DataAccess.Tests", "PlantCare.DataAccess.Tests\PlantCare.DataAccess.Tests.csproj", "{CC67A384-4FB3-467D-B99D-E0344473EF40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantCare.DataAccess.Tests", "PlantCare.DataAccess.Tests\PlantCare.DataAccess.Tests.csproj", "{CC67A384-4FB3-467D-B99D-E0344473EF40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCare.WPF", "PlantCare.WPF\PlantCare.WPF.csproj", "{A125F218-BAEB-48AC-A67B-EB2557210717}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CC67A384-4FB3-467D-B99D-E0344473EF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC67A384-4FB3-467D-B99D-E0344473EF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC67A384-4FB3-467D-B99D-E0344473EF40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A125F218-BAEB-48AC-A67B-EB2557210717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A125F218-BAEB-48AC-A67B-EB2557210717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A125F218-BAEB-48AC-A67B-EB2557210717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A125F218-BAEB-48AC-A67B-EB2557210717}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

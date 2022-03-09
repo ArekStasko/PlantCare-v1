@@ -39,7 +39,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -49,15 +50,16 @@ namespace PlantCare.DataAccess.Tests
 
             var plantServices = DataAccessFactory.GetPlantServicesInstance();
 
-            var plant = new Plant()
-            {
-                RoomID = room.Id,
-                PlantName = "Test name",
-                PlantDescription = "Test Description",
-                HydrationNeeded = "A little",
-                HowManyDaysToHydration = 2,
-                IsSunNeeded = false,
-                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22)
+        var plant = new Plant()
+        {
+            RoomID = room.Id,
+            PlantName = "Test name",
+            PlantDescription = "Test Description",
+            HydrationNeeded = "A little",
+            HowManyDaysToHydration = 2,
+            IsSunNeeded = false,
+            LastHydration = new DateTime(2022, 02, 22, 22, 22, 22),
+            ImageSource = "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             };
 
             plantServices.InsertPlant(plant);
@@ -79,7 +81,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -97,7 +100,8 @@ namespace PlantCare.DataAccess.Tests
                 HydrationNeeded = "A little",
                 HowManyDaysToHydration = 2,
                 IsSunNeeded = false,
-                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             };
 
             plantServices.InsertPlant(plant);
@@ -116,7 +120,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -134,7 +139,8 @@ namespace PlantCare.DataAccess.Tests
                 HydrationNeeded = "A little",
                 HowManyDaysToHydration = 2,
                 IsSunNeeded = false,
-                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             };
 
             plantServices.InsertPlant(plant);
@@ -152,7 +158,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -170,7 +177,8 @@ namespace PlantCare.DataAccess.Tests
                 HydrationNeeded = "A little",
                 HowManyDaysToHydration = 2,
                 IsSunNeeded = false,
-                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             };
 
             plantServices.InsertPlant(plant);
@@ -188,7 +196,8 @@ namespace PlantCare.DataAccess.Tests
                 RoomLocation = "First floor",
                 PlantsCount = 12,
                 RoomInsolation = 56,
-                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastVisit = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             };
 
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -206,7 +215,8 @@ namespace PlantCare.DataAccess.Tests
                 HydrationNeeded = "A little",
                 HowManyDaysToHydration = 2,
                 IsSunNeeded = false,
-                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22)
+                LastHydration = new DateTime(2022, 02, 22, 22, 22, 22),
+                ImageSource = "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             };
 
             plantServices.InsertPlant(plant);

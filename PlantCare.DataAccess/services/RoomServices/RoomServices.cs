@@ -53,7 +53,8 @@ namespace PlantCare.DataAccess.services
                         RoomLocation = room.RoomLocation,
                         PlantsCount = room.PlantsCount,
                         RoomInsolation = room.RoomInsolation,
-                        LastVisit = room.LastVisit
+                        LastVisit = room.LastVisit,
+                        ImageSource = room.ImageSource
                     },
                     commandType: CommandType.StoredProcedure
                     );
@@ -82,7 +83,8 @@ namespace PlantCare.DataAccess.services
                          RoomLocation = room.RoomLocation,
                          PlantsCount = room.PlantsCount,
                          RoomInsolation = room.RoomInsolation,
-                         LastVisit = room.LastVisit
+                         LastVisit = room.LastVisit,
+                         ImageSource = room.ImageSource
                      },
                     commandType: CommandType.StoredProcedure
                     ); 

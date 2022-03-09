@@ -9,7 +9,7 @@ namespace PlantCare
             var view = new View();
         }
     }
-
+    
     public class View
     {
 
