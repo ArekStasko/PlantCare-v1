@@ -22,10 +22,10 @@ namespace PlantCare.WPF
     {
         private IRoomControllers _roomControllers;
         private List<Room> _rooms;
-        public List<Room> Rooms 
-        { 
-            get => _rooms; 
-            set => _rooms = value; 
+        public List<Room> Rooms
+        {
+            get => _rooms;
+            set => _rooms = value;
         }
 
         public MainWindow()
@@ -34,7 +34,7 @@ namespace PlantCare.WPF
             _roomControllers = ControllersFactory.GetRoomControllers(this);
         }
 
-        internal void LoadElements()
+        private void LoadElements()
         {
             Rooms = _roomControllers.GetRooms();
             icRooms.ItemsSource = Rooms;
@@ -55,6 +55,18 @@ namespace PlantCare.WPF
             MessageBoxButton btn = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Error;
             MessageBox.Show(msg, caption, btn, icon);
+        }
+
+        private void DeleteRoom(Guid Id)
+        {
+            _roomControllers.DeleteRoom(Id);
+            LoadElements();
+        } 
+        
+        private void DeleteRoom_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            DeleteRoom((Guid)button.Tag);
         }
     }
 }
