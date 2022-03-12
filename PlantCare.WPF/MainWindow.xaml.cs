@@ -17,9 +17,7 @@ using PlantCare.DataAccess.models;
 
 namespace PlantCare.WPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window, IView
     {
         private IRoomControllers _roomControllers;

@@ -1,0 +1,53 @@
+﻿<Window x:Class="PlantCare.WPF.AddRoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlantCare.WPF"
+        mc:Ignorable="d"
+        Title="AddRoomWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Text="Provide your room info" FontSize="25" TextAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Name" />
+                <TextBlock Grid.Row="0" Width="250" Height="40" />
+                <Label Grid.Row="1" Content="Location" />
+                <TextBlock Grid.Row="1" Width="250" Height="40" />
+                <Label Grid.Row="2" Content="PlantsCount" />
+                <TextBlock Grid.Row="2" Width="250" Height="40" />
+                <Label Grid.Row="3" Content="RoomInsolation" />
+                <TextBlock Grid.Row="3" Width="250" Height="40" />
+                <Label Grid.Row="4" Content="LastVisit" />
+                <TextBlock Grid.Row="4" Width="250" Height="40" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button Width="200" Height="40" Content="Add room" FontSize="20" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
