@@ -54,7 +54,7 @@
                 <RowDefinition Height="150" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Width="120" Height="50" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" Content="Add Room" FontWeight="Bold" FontSize="20" />
+            <Button Click="AddRoom_Click" Grid.Row="0" Width="120" Height="50" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" Content="Add Room" FontWeight="Bold" FontSize="20" />
         </Grid>
     </Grid>
 </Window>

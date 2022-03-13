@@ -17,5 +17,9 @@ namespace PlantCare.Controllers
 
         public List<Room> GetRooms() => roomServices.GetRooms();
         public void DeleteRoom(Guid Id) => roomServices.DeleteRoom(Id);
+        public void CreateRoom(List<string> roomData)
+        {
+
+        }
     }
 }

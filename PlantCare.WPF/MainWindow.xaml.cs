@@ -34,7 +34,7 @@ namespace PlantCare.WPF
             _roomControllers = ControllersFactory.GetRoomControllers(this);
         }
 
-        private void LoadElements()
+        public void LoadElements()
         {
             Rooms = _roomControllers.GetRooms();
             icRooms.ItemsSource = Rooms;
@@ -67,6 +67,12 @@ namespace PlantCare.WPF
         {
             var button = sender as Button;
             DeleteRoom((Guid)button.Tag);
+        }
+
+        private void AddRoom_Click(object sender, RoutedEventArgs e)
+        {
+            var addRoomView = new AddRoomWindow(this);
+            addRoomView.Show();
         }
     }
 }
