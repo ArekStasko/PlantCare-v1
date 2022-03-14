@@ -19,7 +19,13 @@ namespace PlantCare.Controllers
         public void DeleteRoom(Guid Id) => roomServices.DeleteRoom(Id);
         public void CreateRoom(List<string> roomData)
         {
-
+            if (!Int32.TryParse(roomData[2], out int n) || !Int32.TryParse(roomData[3], out int p))
+            {
+                _view.DisplayErrorMessage("Plants count and room insolation have to be numbers");
+                return;
+            }
+            var roomToAdd = DataAccessFactory.GetRoomInstance();
+            
         }
     }
 }
