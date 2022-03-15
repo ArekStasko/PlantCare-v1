@@ -79,7 +79,7 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="2">
-                <Button Width="200" Height="40" Content="Add room" FontSize="20" />
+                <Button Click="Add_Click" Width="200" Height="40" Content="Add room" FontSize="20" />
             </Grid>
         </Grid>
     </Grid>

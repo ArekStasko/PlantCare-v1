@@ -6,7 +6,7 @@ namespace PlantCare.DataAccess.services
     {
         public List<Room> GetRooms();
         public Room GetRoom(Guid roomID);
-        public void InsertRoom(Room room);
+        public void InsertRoom(IRoom room);
         public void DeleteRoom(Guid Id);
         public void UpdateRoom(Room room);
     }

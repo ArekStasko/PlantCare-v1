@@ -21,7 +21,20 @@ namespace PlantCare.Controllers
         {
             var roomToAdd = DataAccessFactory.GetRoomInstance();
             SetDate(roomToAdd, roomData[5], roomData[6], roomData[7]);
-            CheckRoomInsolation(roomToAdd, roomData[3]);
+            SetRoomInsolation(roomToAdd, roomData[3]);
+            SetPlantsCount(roomToAdd, roomData[2]);
+            roomToAdd.RoomName = roomData[0];
+            roomToAdd.RoomLocation = roomData[1];
+            roomToAdd.ImageSource = roomData[4];
+
+            try
+            {
+                roomServices.InsertRoom(roomToAdd);
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("An error has occured");
+            }
         }
 
         private void SetDate(IRoom room, string day, string month, string year)
@@ -40,7 +53,7 @@ namespace PlantCare.Controllers
             }
         }
 
-        private void CheckRoomInsolation(IRoom room, string insolation)
+        private void SetRoomInsolation(IRoom room, string insolation)
         {
             try
             {
@@ -51,6 +64,19 @@ namespace PlantCare.Controllers
             catch (Exception)
             {
                 _view.DisplayErrorMessage("You provided wrong insolation, it has to be between 0 and 100");
+                return;
+            }
+        }
+
+        private void SetPlantsCount(IRoom room, string plantsCount)
+        {
+            try
+            {
+                room.PlantsCount = Int32.Parse(plantsCount);
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("You provided wrong plants count, it has to be a number");
                 return;
             }
         }

@@ -41,7 +41,7 @@ namespace PlantCare.DataAccess.services
             }
         }
 
-        public void InsertRoom(Room room)
+        public void InsertRoom(IRoom room)
         {
             OpenConnection();
             using(IDbConnection connection = _conn)
