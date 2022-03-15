@@ -11,6 +11,7 @@
 *.sln.docstates
 
 Helper.cs
+helper.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

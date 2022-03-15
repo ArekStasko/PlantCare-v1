@@ -19,13 +19,40 @@ namespace PlantCare.Controllers
         public void DeleteRoom(Guid Id) => roomServices.DeleteRoom(Id);
         public void CreateRoom(List<string> roomData)
         {
-            if (!Int32.TryParse(roomData[2], out int n) || !Int32.TryParse(roomData[3], out int p))
+            var roomToAdd = DataAccessFactory.GetRoomInstance();
+            SetDate(roomToAdd, roomData[5], roomData[6], roomData[7]);
+            CheckRoomInsolation(roomToAdd, roomData[3]);
+        }
+
+        private void SetDate(IRoom room, string day, string month, string year)
+        {
+            try
             {
-                _view.DisplayErrorMessage("Plants count and room insolation have to be numbers");
+                var todayDate = DateTime.Now;
+                var date = new DateTime(Int32.Parse(year), Int32.Parse(month), Int32.Parse(day));
+                if (date > todayDate) throw new Exception();
+                room.LastVisit = date;
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("You provided wrong date");
                 return;
             }
-            var roomToAdd = DataAccessFactory.GetRoomInstance();
-            
+        }
+
+        private void CheckRoomInsolation(IRoom room, string insolation)
+        {
+            try
+            {
+                int ins = Int32.Parse(insolation);
+                if(ins > 100 || ins < 0) throw new Exception();
+                room.RoomInsolation = ins;
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("You provided wrong insolation, it has to be between 0 and 100");
+                return;
+            }
         }
     }
 }

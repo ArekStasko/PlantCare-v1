@@ -40,22 +40,43 @@
             </Grid>
             <Grid Grid.Row="1" >
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="90" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Content="Name" />
+                <Label FontSize="16" Grid.Row="0" Content="Name" />
                 <TextBox Name="RoomName" Grid.Row="0" Width="250" Height="40" />
-                <Label Grid.Row="1" Content="Location" />
+                <Label FontSize="16" Grid.Row="1" Content="Location" />
                 <TextBox Name="RoomLocation"  Grid.Row="1" Width="250" Height="40" />
-                <Label Grid.Row="2" Content="PlantsCount" />
-                <TextBox Name="PlantsCount" Grid.Row="2" Width="250" Height="40" />
-                <Label Grid.Row="3" Content="RoomInsolation" />
-                <TextBox Name="RoomInsolation" Grid.Row="3" Width="250" Height="40" />
-                <Label Grid.Row="4" Content="LastVisit" />
-                <TextBox Name="LastVisit" Grid.Row="4" Width="250" Height="40" />
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label FontSize="16" Grid.Column="0" Content="Plants Count" />
+                    <TextBox Grid.Column="0" Name="PlantsCount" Grid.Row="2" Width="100" Height="40" />
+                    <Label FontSize="16" Grid.Column="1" Content="Room Insolation" />
+                    <TextBox Grid.Column="1" Name="RoomInsolation" Grid.Row="3" Width="100" Height="40" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Last visit data" Grid.Column="1" Grid.Row="0" FontSize="18" />
+                    <Label FontSize="14" Grid.Row="1"  Grid.Column="0" Content="Day" />
+                    <TextBox Grid.Row="1" Grid.Column="0" Name="Day" Width="100" Height="40" />
+                    <Label FontSize="14" Grid.Row="1" Grid.Column="1" Content="Month" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="Month" Width="100" Height="40" />
+                    <Label FontSize="14" Grid.Row="1" Grid.Column="2" Content="Year" />
+                    <TextBox Grid.Row="1" Grid.Column="2" Name="Year" Width="100" Height="40" />
+                </Grid>
             </Grid>
             <Grid Grid.Row="2">
                 <Button Width="200" Height="40" Content="Add room" FontSize="20" />

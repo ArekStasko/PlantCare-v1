@@ -37,8 +37,10 @@ namespace PlantCare.WPF
                 RoomLocation.Text,
                 PlantsCount.Text,
                 RoomInsolation.Text,
-                LastVisit.Text,
                 ImageSource.Text,
+                Day.Text,
+                Month.Text,
+                Year.Text
             };
             _roomControllers = ControllersFactory.GetRoomControllers(this);
             _roomControllers.CreateRoom(data);
