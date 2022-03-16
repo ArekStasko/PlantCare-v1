@@ -17,6 +17,27 @@ namespace PlantCare.Controllers
 
         public List<Room> GetRooms() => roomServices.GetRooms();
         public void DeleteRoom(Guid Id) => roomServices.DeleteRoom(Id);
+        public void EditRoom(List<string> newData, Guid Id)
+        {
+            var editedRoom = roomServices.GetRoom(Id);
+            SetDate(editedRoom, newData[5], newData[6], newData[7]);
+            SetRoomInsolation(editedRoom, newData[3]);
+            SetPlantsCount(editedRoom, newData[2]);
+            editedRoom.RoomName = newData[0];
+            editedRoom.RoomLocation = newData[1];
+            editedRoom.ImageSource = newData[4];
+
+            try
+            {
+                roomServices.UpdateRoom(editedRoom);
+                _view.DisplayMessage("Successfully updated room");
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("An error has occured");
+                return;
+            }
+        }
         public void CreateRoom(List<string> roomData)
         {
             var roomToAdd = DataAccessFactory.GetRoomInstance();
@@ -30,11 +51,26 @@ namespace PlantCare.Controllers
             try
             {
                 roomServices.InsertRoom(roomToAdd);
+                _view.DisplayMessage("Successfully inserted room");
             }
             catch (Exception)
             {
                 _view.DisplayErrorMessage("An error has occured");
             }
+        } 
+
+        public void AddPlantToRoom(Guid Id)
+        {
+            var room = roomServices.GetRoom(Id);
+            room.PlantsCount++;
+            roomServices.UpdateRoom(room);
+        }
+
+        public void RemovePlantFromRoom(Guid Id)
+        {
+            var room = roomServices.GetRoom(Id);
+            room.PlantsCount--;
+            roomServices.UpdateRoom(room);
         }
 
         private void SetDate(IRoom room, string day, string month, string year)
