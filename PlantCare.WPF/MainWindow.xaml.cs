@@ -74,5 +74,13 @@ namespace PlantCare.WPF
             var addRoomView = new AddRoomWindow(this);
             addRoomView.Show();
         }
+
+        private void UpdateRoom_Click(object sender, RoutedEventArgs e)
+        {
+            Button? btn = sender as Button;
+            var Id = (Guid)btn.Tag;
+            var updateRoomView = new UpdateRoomWindow(this, Id);
+            updateRoomView.Show();
+        }
     }
 }

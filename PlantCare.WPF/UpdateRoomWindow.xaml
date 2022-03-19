@@ -1,0 +1,86 @@
+﻿<Window x:Class="PlantCare.WPF.UpdateRoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlantCare.WPF"
+        mc:Ignorable="d"
+        Title="UpdateRoomWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Provide Image link" TextAlignment="Center" FontSize="25" Grid.Row="0" />
+                <TextBox Text="{Binding ImageSource}" TextChanged="ChangeUrl_TextChanged" Name="ImageSource" Width="300" Height="40" Grid.Row="1" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Image Name="RoomImage" Stretch="Fill" />
+                <TextBlock Name="ImageInfo" FontSize="25" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Text="Provide your room info" FontSize="25" TextAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="90" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label FontSize="16" Grid.Row="0" Content="Name" />
+                <TextBox Text="{Binding RoomName}" Name="RoomName" Grid.Row="0" Width="250" Height="40" />
+                <Label FontSize="16" Grid.Row="1" Content="Location" />
+                <TextBox Text="{Binding RoomLocation}" Name="RoomLocation"  Grid.Row="1" Width="250" Height="40" />
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label FontSize="16" Grid.Column="0" Content="Plants Count" />
+                    <TextBox Text="{Binding PlantsCount}" Grid.Column="0" Name="PlantsCount" Grid.Row="2" Width="100" Height="40" />
+                    <Label FontSize="16" Grid.Column="1" Content="Room Insolation" />
+                    <TextBox Text="{Binding RoomInsolation}" Grid.Column="1" Name="RoomInsolation" Grid.Row="3" Width="100" Height="40" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Last visit data" Grid.Column="1" Grid.Row="0" FontSize="18" />
+                    <Label FontSize="14" Grid.Row="1"  Grid.Column="0" Content="Day" />
+                    <TextBox Text="{Binding LastVisit.Day, Mode=OneWay}" Grid.Row="1" Grid.Column="0" Name="Day" Width="100" Height="40" />
+                    <Label FontSize="14" Grid.Row="1" Grid.Column="1" Content="Month" />
+                    <TextBox Text="{Binding LastVisit.Month, Mode=OneWay}" Grid.Row="1" Grid.Column="1" Name="Month" Width="100" Height="40" />
+                    <Label FontSize="14" Grid.Row="1" Grid.Column="2" Content="Year" />
+                    <TextBox Text="{Binding LastVisit.Year, Mode=OneWay}" Grid.Row="1" Grid.Column="2" Name="Year" Width="100" Height="40" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button Click="Edit_Click"  Width="200" Height="40" Content="Edit room" FontSize="20" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

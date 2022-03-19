@@ -40,7 +40,7 @@
                                         <ColumnDefinition Width="50" />
                                         <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
-                                    <Button Tag="{Binding Id}" Grid.Column="1" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
+                                    <Button Tag="{Binding Id}" Click="UpdateRoom_Click" Grid.Column="1" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
                                     <Button Tag="{Binding Id}" Click="DeleteRoom_Click" Grid.Column="2" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
                                 </Grid>
                         </Grid>
