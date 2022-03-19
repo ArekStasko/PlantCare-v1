@@ -18,6 +18,22 @@ namespace PlantCare.Controllers
         public List<Room> GetRooms() => roomServices.GetRooms();
         public Room GetRoom(Guid Id) => roomServices.GetRoom(Id);
         public void DeleteRoom(Guid Id) => roomServices.DeleteRoom(Id);
+
+        public void UpdateRoom(List<string> roomData, Guid Id)
+        {
+            var roomToUpdate = roomServices.GetRoom(Id);
+            FillRoomData(roomToUpdate, roomData);
+            try
+            {
+                roomServices.UpdateRoom(roomToUpdate);
+                _view.DisplayMessage("Successfully Updated room");
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("An error has occured");
+            }
+        }
+
         public void CreateRoom(List<string> roomData)
         {
             var roomToAdd = DataAccessFactory.GetRoomInstance();

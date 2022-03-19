@@ -54,7 +54,7 @@ namespace PlantCare.Controllers.Tests
         }
 
         [Test]
-        public void EditRoom_ShouldEdit_OneRoom()
+        public void UpdateRoom_ShouldEdit_OneRoom()
         {
             Assert.Pass();
         }
