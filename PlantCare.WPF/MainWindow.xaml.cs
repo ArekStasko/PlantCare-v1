@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PlantCare.Controllers;
 using PlantCare.DataAccess.models;
+using PlantCare.WPF.plantViews;
 
 namespace PlantCare.WPF
 {
@@ -87,7 +88,8 @@ namespace PlantCare.WPF
         {
             Button? btn = sender as Button;
             var Id = (Guid)btn.Tag;
-           
+            var plantsView = new PlantsView(Id);
+            this.Content = plantsView;
         }
     }
 }
