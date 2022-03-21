@@ -7,13 +7,20 @@ namespace PlantCare.Controllers
     public class PlantControllers : IPlantControllers
     {
         private IView _view;
-        private IPlantServices plantServices;
+        private IPlantServices _plantServices;
 
         public PlantControllers(IView view)
         {
             _view = view;
-            plantServices = DataAccessFactory.GetPlantServicesInstance();
+            _plantServices = DataAccessFactory.GetPlantServicesInstance();
         }
 
+        public List<Plant> GetPlants() => _plantServices.GetPlants();
+        public List<Plant> GetRoomPlants(Guid Id)
+        {
+            var plants = _plantServices.GetPlants();
+            return plants.Where(plant => plant.RoomID == Id).ToList();
+        }
+        public Plant GetPlant(Guid Id) => _plantServices.GetPlant(Id);
     }
 }
