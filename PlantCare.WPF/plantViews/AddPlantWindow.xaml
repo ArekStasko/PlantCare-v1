@@ -7,6 +7,88 @@
         mc:Ignorable="d"
         Title="AddPlantWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Provide Image link" TextAlignment="Center" FontSize="25" Grid.Row="0" />
+                <TextBox TextChanged="ChangeUrl_TextChanged" Name="ImageSource" Width="300" Height="40" Grid.Row="1" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Image Name="PlantImage" Stretch="Fill" />
+                <TextBlock Name="ImageInfo" FontSize="25" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Text="Provide Plant info" FontSize="25" TextAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label FontSize="16" Content="Name" />
+                    <TextBox Name="PlantName" Width="250" Height="40" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Label FontSize="16" Content="Description" />
+                    <TextBox Name="PlantDescription" Width="250" Height="40" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label FontSize="16" Content="Hydration Needed" />
+                        <TextBox Grid.Column="0" Name="HydrationNeeded" Width="100" Height="40" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label FontSize="16" Grid.Column="0" Content="Is Sun Needed" />
+                        <RadioButton Name="IsSunNeeded" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Last hydration date" Grid.Column="1" Grid.Row="0" FontSize="18" />
+                    <Label FontSize="14" Grid.Row="1"  Grid.Column="0" Content="Day" />
+                    <TextBox Grid.Row="1" Grid.Column="0" Name="Day" Width="100" Height="40" />
+                    <Label FontSize="14" Grid.Row="1" Grid.Column="1" Content="Month" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="Month" Width="100" Height="40" />
+                    <Label FontSize="14" Grid.Row="1" Grid.Column="2" Content="Year" />
+                    <TextBox Grid.Row="1" Grid.Column="2" Name="Year" Width="100" Height="40" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button Click="AddPlant_Click" Width="200" Height="40" Content="Add Plant" FontSize="20" />
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -45,9 +45,10 @@ namespace PlantCare.WPF.plantViews
 
         private void icPlants_Loaded(object sender, RoutedEventArgs e) => Load_Elements();
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddPlant_Click(object sender, RoutedEventArgs e)
         {
-
+            var addPlantView = new AddPlantWindow();
+            addPlantView.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
