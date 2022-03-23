@@ -30,7 +30,17 @@ namespace PlantCare.Controllers
 
         public void UpdatePlant(List<string> plantData, Guid plantID)
         {
-
+            var plantToUpdate = _plantServices.GetPlant(plantID);
+            FillData(plantToUpdate, plantData);
+            try
+            {
+                _plantServices.UpdatePlant(plantToUpdate);
+                _view.DisplayMessage("Successfuly added plant");
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("An error has occured");
+            }
         }
 
         public void CreatePlant(List<string> plantData, Guid roomID)
