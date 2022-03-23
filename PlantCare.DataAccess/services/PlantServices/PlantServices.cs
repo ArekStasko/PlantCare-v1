@@ -46,7 +46,7 @@ namespace PlantCare.DataAccess.services
             }
         }
 
-        public void InsertPlant(Plant plant)
+        public void InsertPlant(IPlant plant)
         {
             OpenConnection();
             using(IDbConnection connection = _conn)

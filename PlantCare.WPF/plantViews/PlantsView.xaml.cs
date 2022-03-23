@@ -23,7 +23,7 @@ namespace PlantCare.WPF.plantViews
     public partial class PlantsView : Page, IView
     {
         private IPlantControllers _plantControllers;
-        private Guid _roomID;
+        public Guid RoomID;
         private List<Plant> _plants;
         public List<Plant> Plants {
             get => _plants;
@@ -33,13 +33,13 @@ namespace PlantCare.WPF.plantViews
         public PlantsView(Guid roomID)
         {
             InitializeComponent();
-            _roomID = roomID;   
+            RoomID = roomID;   
             _plantControllers = ControllersFactory.GetPlantControlers(this);
         }
 
         public void Load_Elements()
         {
-            Plants = _plantControllers.GetRoomPlants(_roomID);
+            Plants = _plantControllers.GetRoomPlants(RoomID);
             icPlants.ItemsSource = Plants;
         }
 
@@ -47,7 +47,7 @@ namespace PlantCare.WPF.plantViews
 
         private void AddPlant_Click(object sender, RoutedEventArgs e)
         {
-            var addPlantView = new AddPlantWindow();
+            var addPlantView = new AddPlantWindow(this);
             addPlantView.Show();
         }
 

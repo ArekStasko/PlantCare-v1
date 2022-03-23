@@ -23,15 +23,30 @@ namespace PlantCare.WPF.plantViews
     {
 
         private IPlantControllers _plantControllers;
-        public AddPlantWindow()
+        private PlantsView _plantsView;
+        public AddPlantWindow(PlantsView plantsView)
         {
             InitializeComponent();
             _plantControllers = ControllersFactory.GetPlantControlers(this);
+            _plantsView = plantsView;
         }
 
         private void AddPlant_Click(object sender, RoutedEventArgs e)
         {
-
+            var data = new List<string>()
+            {
+                PlantName.Text,
+                PlantDescription.Text,
+                HydrationNeeded.Text,
+                IsSunNeeded.IsChecked.ToString(),
+                ImageSource.Text,
+                Day.Text,
+                Month.Text,
+                Year.Text,
+            };
+            _plantControllers.CreatePlant(data, _plantsView.RoomID);
+            _plantsView.Load_Elements();
+            this.Close();
         }
 
         public void DisplayMessage(string msg)
