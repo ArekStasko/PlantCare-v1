@@ -51,9 +51,12 @@ namespace PlantCare.WPF.plantViews
             addPlantView.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void UpdatePlant_Click(object sender, RoutedEventArgs e)
         {
-
+            Button ?btn = sender as Button;
+            var Id = (Guid)btn.Tag;
+            var updatePlantView = new UpdatePlantWindow(this, Id);
+            updatePlantView.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

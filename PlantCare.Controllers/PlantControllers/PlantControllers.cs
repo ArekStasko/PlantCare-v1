@@ -23,6 +23,16 @@ namespace PlantCare.Controllers
         }
         public Plant GetPlant(Guid Id) => _plantServices.GetPlant(Id);
 
+        public void DeletePlant(Guid Id)
+        {
+
+        }
+
+        public void UpdatePlant(List<string> plantData, Guid plantID)
+        {
+
+        }
+
         public void CreatePlant(List<string> plantData, Guid roomID)
         {
             var plantToCreate = DataAccessFactory.GetPlantInstance();
