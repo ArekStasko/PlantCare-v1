@@ -9,6 +9,7 @@ namespace PlantCare.Controllers
         public Plant GetPlant(Guid Id);
         public void CreatePlant(List<string> plantData, Guid roomID);
         public void UpdatePlant(List<string> plantData, Guid plantID);
-        public void DeletePlant(Guid plantID);
+        public void DeletePlant(Guid Id, Guid roomID);
+        public void DeletePlant(Guid Id);
     }
 }

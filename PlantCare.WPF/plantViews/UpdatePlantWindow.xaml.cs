@@ -37,7 +37,20 @@ namespace PlantCare.WPF.plantViews
 
         private void UpdatePlant_Click(object sender, RoutedEventArgs e)
         {
-
+            var data = new List<string>()
+            {
+                PlantName.Text,
+                PlantDescription.Text,
+                HydrationNeeded.Text,
+                IsSunNeeded.IsChecked.ToString(),
+                ImageSource.Text,
+                Day.Text,
+                Month.Text,
+                Year.Text,
+            };
+            _plantControllers.UpdatePlant(data, _plant.Id);
+            _plantsView.Load_Elements();
+            this.Close();
         }
 
         public void DisplayMessage(string msg)

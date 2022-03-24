@@ -59,9 +59,12 @@ namespace PlantCare.WPF.plantViews
             updatePlantView.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void DeletePlant_Click(object sender, RoutedEventArgs e)
         {
-
+            Button? btn = sender as Button;
+            var Id = (Guid)btn.Tag;
+            _plantControllers.DeletePlant(Id, RoomID);
+            Load_Elements();
         }
 
         public void DisplayMessage(string msg)

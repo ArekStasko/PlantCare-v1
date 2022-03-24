@@ -23,9 +23,15 @@ namespace PlantCare.Controllers
         }
         public Plant GetPlant(Guid Id) => _plantServices.GetPlant(Id);
 
-        public void DeletePlant(Guid Id)
+        public void DeletePlant(Guid Id) => _plantServices.DeletePlant(Id);
+        
+        public void DeletePlant(Guid Id, Guid roomID)
         {
-
+            var roomServices = DataAccessFactory.GetRoomServicesInstance();
+            var room = roomServices.GetRoom(roomID);
+            room.PlantsCount--;
+            roomServices.UpdateRoom(room);
+            _plantServices.DeletePlant(Id);
         }
 
         public void UpdatePlant(List<string> plantData, Guid plantID)
@@ -35,7 +41,7 @@ namespace PlantCare.Controllers
             try
             {
                 _plantServices.UpdatePlant(plantToUpdate);
-                _view.DisplayMessage("Successfuly added plant");
+                _view.DisplayMessage("Successfuly updated plant");
             }
             catch (Exception)
             {
@@ -46,9 +52,13 @@ namespace PlantCare.Controllers
         public void CreatePlant(List<string> plantData, Guid roomID)
         {
             var plantToCreate = DataAccessFactory.GetPlantInstance();
+            var roomServices = DataAccessFactory.GetRoomServicesInstance();
+            var room = roomServices.GetRoom(roomID);
+            room.PlantsCount++;
+            roomServices.UpdateRoom(room);
             plantToCreate.RoomID = roomID;
             FillData(plantToCreate, plantData);
-
+            
             try
             {
                 _plantServices.InsertPlant(plantToCreate);

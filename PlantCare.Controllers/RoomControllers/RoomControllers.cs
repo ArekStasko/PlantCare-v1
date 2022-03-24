@@ -17,7 +17,17 @@ namespace PlantCare.Controllers
 
         public List<Room> GetRooms() => roomServices.GetRooms();
         public Room GetRoom(Guid Id) => roomServices.GetRoom(Id);
-        public void DeleteRoom(Guid Id) => roomServices.DeleteRoom(Id);
+
+        public void DeleteRoom(Guid Id)
+        {
+            var plantControllers = ControllersFactory.GetPlantControlers(_view);
+            var plants = plantControllers.GetRoomPlants(Id);
+            foreach(var plant in plants)
+            {
+                plantControllers.DeletePlant(plant.Id);
+            }
+            roomServices.DeleteRoom(Id);
+        }
 
         public void UpdateRoom(List<string> roomData, Guid Id)
         {
