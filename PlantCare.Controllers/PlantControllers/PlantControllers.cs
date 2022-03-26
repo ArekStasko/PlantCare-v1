@@ -24,7 +24,7 @@ namespace PlantCare.Controllers
         public Plant GetPlant(Guid Id) => _plantServices.GetPlant(Id);
 
         public void DeletePlant(Guid Id) => _plantServices.DeletePlant(Id);
-        
+
         public void DeletePlant(Guid Id, Guid roomID)
         {
             var roomServices = DataAccessFactory.GetRoomServicesInstance();
@@ -47,6 +47,32 @@ namespace PlantCare.Controllers
             {
                 _view.DisplayErrorMessage("An error has occured");
             }
+        }
+
+        public void UpdatePlant(Guid plantID)
+        {
+            var plantToUpdate = _plantServices.GetPlant(plantID);
+            plantToUpdate.LastHydration = DateTime.Now;
+            try
+            {
+                _plantServices.UpdatePlant(plantToUpdate);
+                _view.DisplayMessage("Successfuly updated hydration date");
+            }
+            catch (Exception)
+            {
+                _view.DisplayErrorMessage("An error has occured");
+            }
+        }
+
+        public void UpdateAllPlants(Guid roomID)
+        {
+            var plantsToUdate = _plantServices.GetRoomPlants(roomID);
+            foreach(var plant in plantsToUdate)
+            {
+                plant.LastHydration = DateTime.Now;
+                _plantServices.UpdatePlant(plant);
+            }
+            _view.DisplayMessage("Successfuly updated hydration date in all plants");
         }
 
         public void CreatePlant(List<string> plantData, Guid roomID)

@@ -29,22 +29,27 @@
                                         <RowDefinition Height="auto" />
                                         <RowDefinition Height="auto" />
                                         <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
                                     </Grid.RowDefinitions>
                                     <TextBlock Margin="5" Grid.Row="0" Text="{Binding PlantName}" FontSize="18" />
                                     <TextBlock Margin="3" Grid.Row="1" Text="{Binding PlantDescription}" FontSize="16" />
                                     <TextBlock Margin="3" Grid.Row="2" Text="{Binding HydrationNeeded}" />
-                                    <TextBlock Margin="3" Grid.Row="2" Text="{Binding HowManyDaysToHydration}" />
-                                    <TextBlock Margin="3" Grid.Row="2" Text="{Binding IsSunNeeded}" />
-                                    <TextBlock Margin="3" Grid.Row="2" Text="{Binding LastHydration}" />
+                                    <TextBlock Margin="3" Grid.Row="3" Text="{Binding HowManyDaysToHydration}" />
+                                    <TextBlock Margin="3" Grid.Row="4" Text="{Binding IsSunNeeded}" />
+                                    <TextBlock Margin="3" Grid.Row="5" Text="{Binding LastHydration}" />
                                 </Grid>
                                 <Grid Margin="10" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="50" />
                                         <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
                                     <Button Tag="{Binding Id}" Click="UpdatePlant_Click" Grid.Column="1" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
                                     <Button Tag="{Binding Id}" Click="DeletePlant_Click" Grid.Column="2" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
+                                    <Button Tag="{Binding Id}" Click="UpdateDate_Click" Grid.Column="3" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE895;</Button>
                                 </Grid>
                             </Grid>
                         </WrapPanel>
@@ -58,8 +63,15 @@
                 <RowDefinition Height="100" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <Button Click="AddPlant_Click" Grid.Row="0" Width="120" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" Cursor="Hand" Content="Add Plant" FontWeight="Bold" FontSize="20" />
-            <Button Click="BackToRooms_Click" Grid.Row="1" Width="150" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" Cursor="Hand" Content="Back To Rooms" FontWeight="Bold" FontSize="20" />
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+                <Button Click="AddPlant_Click" Grid.Column="0" Width="120" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" Cursor="Hand" Content="Add Plant" FontWeight="Bold" FontSize="20" />
+                <Button Click="UpdateAllPlantsDate_Click" Grid.Column="1" Width="50" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE895;</Button>
+            </Grid>
+            <Button Click="BackToRooms_Click" Grid.Row="1" Width="185" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" Cursor="Hand" Content="Back To Rooms" FontWeight="Bold" FontSize="20" />
         </Grid>
     </Grid>
 </Page>

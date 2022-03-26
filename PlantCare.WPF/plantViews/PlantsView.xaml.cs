@@ -68,6 +68,20 @@ namespace PlantCare.WPF.plantViews
             Load_Elements();
         }
 
+        private void UpdateDate_Click(object sender, RoutedEventArgs e) 
+        {
+            Button? btn = sender as Button;
+            var Id = (Guid)btn.Tag;
+            _plantControllers.UpdatePlant(Id);
+            Load_Elements();
+        }
+
+        private void UpdateAllPlantsDate_Click(object sender, RoutedEventArgs e)
+        {
+            _plantControllers.UpdateAllPlants(RoomID);
+            Load_Elements();
+        }
+
         public void DisplayMessage(string msg)
         {
             string caption = "Info";
