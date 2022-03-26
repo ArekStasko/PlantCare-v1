@@ -17,7 +17,7 @@
             <ItemsControl HorizontalAlignment="Center" VerticalAlignment="Top" Loaded="icPlants_Loaded" Name="icPlants">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <WrapPanel Margin="10" Width="700" Height="350" Background="#161b22" TextBlock.Foreground="#f0f6fc">
+                        <WrapPanel Margin="10" Width="700" Height="350" Background="#C3E5AE" TextBlock.Foreground="#F7F7F7">
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
@@ -43,8 +43,8 @@
                                         <ColumnDefinition Width="50" />
                                         <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
-                                    <Button Tag="{Binding Id}" Click="UpdatePlant_Click" Grid.Column="1" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
-                                    <Button Tag="{Binding Id}" Click="DeletePlant_Click" Grid.Column="2" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
+                                    <Button Tag="{Binding Id}" Click="UpdatePlant_Click" Grid.Column="1" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
+                                    <Button Tag="{Binding Id}" Click="DeletePlant_Click" Grid.Column="2" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
                                 </Grid>
                             </Grid>
                         </WrapPanel>
@@ -54,10 +54,12 @@
         </ScrollViewer>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="150" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <Button Click="AddPlant_Click" Grid.Row="0" Width="120" Height="50" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" Content="Add Plant" FontWeight="Bold" FontSize="20" />
+            <Button Click="AddPlant_Click" Grid.Row="0" Width="120" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" Cursor="Hand" Content="Add Plant" FontWeight="Bold" FontSize="20" />
+            <Button Click="BackToRooms_Click" Grid.Row="1" Width="150" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" Cursor="Hand" Content="Back To Rooms" FontWeight="Bold" FontSize="20" />
         </Grid>
     </Grid>
 </Page>

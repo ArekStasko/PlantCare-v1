@@ -7,7 +7,7 @@
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize"
         mc:Ignorable="d"
-        Title="PlantCare" Height="500" Width="1000" Background="#0d1117">
+        Title="PlantCare" Height="500" Width="1000" Background="#F1E1A6">
     <Grid  Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -17,7 +17,7 @@
         <ItemsControl HorizontalAlignment="Center" VerticalAlignment="Top" Loaded="icRooms_Loaded" Name="icRooms">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <WrapPanel Margin="10" Width="700" Height="350" Background="#161b22" TextBlock.Foreground="#f0f6fc">
+                        <WrapPanel Margin="10" Width="700" Height="350" Background="#C3E5AE" TextBlock.Foreground="#F7F7F7">
                         <Grid >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -41,9 +41,9 @@
                                         <ColumnDefinition Width="50" />
                                         <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
-                                    <Button Tag="{Binding Id}" Click="UpdateRoom_Click" Grid.Column="1" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
-                                    <Button Tag="{Binding Id}" Click="DeleteRoom_Click" Grid.Column="2" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
-                                    <Button Tag="{Binding Id}" Click="ShowRoomPlants_Click" Grid.Column="3" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
+                                    <Button Tag="{Binding Id}" Click="UpdateRoom_Click" Grid.Column="1" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
+                                    <Button Tag="{Binding Id}" Click="DeleteRoom_Click" Grid.Column="2" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
+                                    <Button Tag="{Binding Id}" Click="ShowRoomPlants_Click" Grid.Column="3" Width="40" Height="40" Foreground="#F7F7F7" Background="#F1E1A6" BorderBrush="#6BCB77" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE8BE;</Button>
                                 </Grid>
                         </Grid>
                     </WrapPanel>
@@ -56,7 +56,7 @@
                 <RowDefinition Height="150" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <Button Click="AddRoom_Click" Grid.Row="0" Width="120" Height="50" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" Content="Add Room" FontWeight="Bold" FontSize="20" />
+            <Button Click="AddRoom_Click" Grid.Row="0" Width="120" Height="50" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" Cursor="Hand" Content="Add Room" FontWeight="Bold" FontSize="20" />
         </Grid>
     </Grid>
 </Window>

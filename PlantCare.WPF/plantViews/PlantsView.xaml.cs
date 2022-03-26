@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PlantCare.DataAccess.models;
 using PlantCare.Controllers;
+using PlantCare.WPF;
 
 namespace PlantCare.WPF.plantViews
 {
@@ -81,6 +82,14 @@ namespace PlantCare.WPF.plantViews
             MessageBoxButton btn = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Error;
             MessageBox.Show(msg, caption, btn, icon);
+        }
+
+        private void BackToRooms_Click(object sender, RoutedEventArgs e)
+        {
+            var mainView = new MainWindow();
+            mainView.Visibility = Visibility.Visible;
+            Window win = (Window)this.Parent;
+            win.Close();
         }
     }
 }
