@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlantCare.WPF.plantViews"
         mc:Ignorable="d"
-        Title="AddPlantWindow" Height="450" Width="800">
+        Title="AddPlantWindow" Height="450" Width="800" Background="#F1E1A6" TextBlock.Foreground="#F7F7F7">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -46,11 +46,11 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Label FontSize="16" Content="Name" />
+                    <Label Foreground="#F7F7F7" FontSize="16" Content="Name" />
                     <TextBox Name="PlantName" Width="250" Height="40" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Label FontSize="16" Content="Description" />
+                    <Label Foreground="#F7F7F7" FontSize="16" Content="Description" />
                     <TextBox Name="PlantDescription" Width="250" Height="40" />
                 </Grid>
                 <Grid Grid.Row="2">
@@ -59,12 +59,16 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <Label FontSize="16" Content="Hydration Needed" />
+                        <Label HorizontalAlignment="Center" Foreground="#F7F7F7" FontSize="16" Content="Hydration Needed" />
                         <TextBox Grid.Column="0" Name="HydrationNeeded" Width="100" Height="40" />
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Label FontSize="16" Grid.Column="0" Content="Is Sun Needed" />
-                        <RadioButton Name="IsSunNeeded" />
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="120" />
+                        </Grid.ColumnDefinitions>
+                        <RadioButton HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Name="IsSunNeeded" />
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Foreground="#F7F7F7" FontSize="16" Content="Is Sun Needed" />
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="3">
@@ -78,16 +82,34 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Last hydration date" Grid.Column="1" Grid.Row="0" FontSize="18" />
-                    <Label FontSize="14" Grid.Row="1"  Grid.Column="0" Content="Day" />
-                    <TextBox Grid.Row="1" Grid.Column="0" Name="Day" Width="100" Height="40" />
-                    <Label FontSize="14" Grid.Row="1" Grid.Column="1" Content="Month" />
-                    <TextBox Grid.Row="1" Grid.Column="1" Name="Month" Width="100" Height="40" />
-                    <Label FontSize="14" Grid.Row="1" Grid.Column="2" Content="Year" />
-                    <TextBox Grid.Row="1" Grid.Column="2" Name="Year" Width="100" Height="40" />
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label HorizontalAlignment="Center" Grid.Row="0" Foreground="#F7F7F7" FontSize="14" Content="Day" />
+                        <TextBox Grid.Row="1" Name="Day" Width="100" Height="40" />
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label HorizontalAlignment="Center" Grid.Row="0" Foreground="#F7F7F7" FontSize="14"  Content="Month" />
+                        <TextBox Grid.Row="1" Name="Month" Width="100" Height="40" />
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label HorizontalAlignment="Center" Grid.Row="0" Foreground="#F7F7F7" FontSize="14" Content="Year" />
+                        <TextBox Grid.Row="1" Name="Year" Width="100" Height="40" />
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid Grid.Row="2">
-                <Button Click="AddPlant_Click" Width="200" Height="40" Content="Add Plant" FontSize="20" />
+                <Button Click="AddPlant_Click" Width="200" Height="40" Content="Add Plant" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" FontSize="18" />
             </Grid>
         </Grid>
     </Grid>

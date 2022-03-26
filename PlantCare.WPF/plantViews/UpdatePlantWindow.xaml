@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlantCare.WPF.plantViews"
         mc:Ignorable="d"
-        Title="UpdatePlantWindow" Height="450" Width="800">
+        Title="UpdatePlantWindow" Height="450" Width="800" Background="#F1E1A6" TextBlock.Foreground="#F7F7F7">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -46,11 +46,11 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Label FontSize="16" Content="Name" />
+                    <Label Foreground="#F7F7F7" FontSize="16" Content="Name" />
                     <TextBox Text="{Binding PlantName}" Name="PlantName" Width="250" Height="40" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Label FontSize="16" Content="Description" />
+                    <Label Foreground="#F7F7F7" FontSize="16" Content="Description" />
                     <TextBox Text="{Binding PlantDescription}" Name="PlantDescription" Width="250" Height="40" />
                 </Grid>
                 <Grid Grid.Row="2">
@@ -60,11 +60,15 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Label FontSize="16" Content="Hydration Needed" />
-                        <TextBox Text="{Binding HydrationNeeded}" Grid.Column="0" Name="HydrationNeeded" Width="100" Height="40" />
+                        <TextBox Foreground="#F7F7F7" Text="{Binding HydrationNeeded}" Grid.Column="0" Name="HydrationNeeded" Width="100" Height="40" />
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Label FontSize="16" Grid.Column="0" Content="Is Sun Needed" />
-                        <RadioButton IsChecked="{Binding IsSunNeeded}" Name="IsSunNeeded" />
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="120" />
+                        </Grid.ColumnDefinitions>
+                        <RadioButton HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" IsChecked="{Binding IsSunNeeded}" Name="IsSunNeeded" />
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Foreground="#F7F7F7" FontSize="16" Content="Is Sun Needed" />
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="3">
@@ -78,16 +82,34 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Last hydration date" Grid.Column="1" Grid.Row="0" FontSize="18" />
-                    <Label FontSize="14" Grid.Row="1"  Grid.Column="0" Content="Day" />
-                    <TextBox Text="{Binding LastHydration.Day, Mode=OneWay}" Grid.Row="1" Grid.Column="0" Name="Day" Width="100" Height="40" />
-                    <Label FontSize="14" Grid.Row="1" Grid.Column="1" Content="Month" />
-                    <TextBox Text="{Binding LastHydration.Month, Mode=OneWay}" Grid.Row="1" Grid.Column="1" Name="Month" Width="100" Height="40" />
-                    <Label FontSize="14" Grid.Row="1" Grid.Column="2" Content="Year" />
-                    <TextBox Text="{Binding LastHydration.Year, Mode=OneWay}" Grid.Row="1" Grid.Column="2" Name="Year" Width="100" Height="40" />
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label FontSize="14" Foreground="#F7F7F7" Grid.Row="0" HorizontalAlignment="Center" Content="Day" />
+                        <TextBox Text="{Binding LastHydration.Day, Mode=OneWay}" Grid.Row="1" Name="Day" Width="100" Height="40" />
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label FontSize="14" Foreground="#F7F7F7" Grid.Row="0" HorizontalAlignment="Center" Content="Month" />
+                        <TextBox Text="{Binding LastHydration.Month, Mode=OneWay}" Grid.Row="1" Name="Month" Width="100" Height="40" />
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label FontSize="14" Foreground="#F7F7F7" Grid.Row="0" HorizontalAlignment="Center" Content="Year" />
+                        <TextBox Text="{Binding LastHydration.Year, Mode=OneWay}" Grid.Row="1" Name="Year" Width="100" Height="40" />
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid Grid.Row="2">
-                <Button Click="UpdatePlant_Click" Width="200" Height="40" Content="Update Plant" FontSize="20" />
+                <Button Click="UpdatePlant_Click" Width="200" Height="40" Content="Update Plant" Foreground="#F7F7F7" Background="#C3E5AE" BorderBrush="#6BCB77" FontSize="18" />
             </Grid>
         </Grid>
     </Grid>

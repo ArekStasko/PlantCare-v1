@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PlantCare.WPF.plantViews"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PlantsView">
+      Title="PlantsView" Background="#F1E1A6">
 
     <Grid  Margin="10">
         <Grid.ColumnDefinitions>
